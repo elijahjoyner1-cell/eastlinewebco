@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img"><rect width="800" height="800" fill="#2a2a2a"/><ellipse cx="400" cy="600" rx="190" ry="14" fill="#000" fill-opacity="0.35"/>
+<path d="M230 480 Q230 240 400 240 Q570 240 570 480 Z" fill="#f59e0b"/>
+<path d="M300 300 Q330 262 400 258" stroke="#fff" stroke-opacity=".25" stroke-width="10" fill="none" stroke-linecap="round"/>
+<path d="M215 480 H585 V556 Q585 574 567 574 H233 Q215 574 215 556Z" fill="#d98906"/>
+<g stroke="#b97205" stroke-width="3"><path d="M245 484 V570"/><path d="M271 484 V570"/><path d="M297 484 V570"/><path d="M323 484 V570"/><path d="M349 484 V570"/><path d="M375 484 V570"/><path d="M401 484 V570"/><path d="M427 484 V570"/><path d="M453 484 V570"/><path d="M479 484 V570"/><path d="M505 484 V570"/><path d="M531 484 V570"/><path d="M557 484 V570"/><path d="M583 484 V570"/></g>
+<rect x="470" y="520" width="92" height="40" fill="#121212"/><text x="516" y="546" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" font-weight="700" letter-spacing="2" fill="#f59e0b" text-anchor="middle">NO ETA</text>
+<text x="760" y="760" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="14" letter-spacing="3" fill="#e5e5e1" fill-opacity="0.6" text-anchor="end">240 GSM</text></svg>

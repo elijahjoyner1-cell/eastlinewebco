@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1216 1600" width="1216" height="1600" role="img"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a2128"/><stop offset="1" stop-color="#3a444c"/></linearGradient>
+<radialGradient id="l" cx=".72" cy=".2" r=".5"><stop offset="0" stop-color="#f59e0b" stop-opacity=".45"/><stop offset="1" stop-color="#f59e0b" stop-opacity="0"/></radialGradient></defs>
+<rect width="1216" height="1600" fill="url(#g)"/><rect width="1216" height="1600" fill="url(#l)"/>
+<circle cx="880" cy="320" r="26" fill="#ffd27a"/><path d="M880 346 V560" stroke="#121212" stroke-opacity=".6" stroke-width="10"/>
+<rect x="0" y="1260" width="1216" height="340" fill="#0d1014"/><path d="M0 1262 H1216" stroke="#e5e5e1" stroke-opacity=".2" stroke-width="3"/>
+<g transform="translate(110 520)"><rect x="0" y="360" width="1000" height="560" fill="#3b3f3a" stroke="#e5e5e1" stroke-opacity=".22" stroke-width="4"/>
+<g stroke="#e5e5e1" stroke-opacity=".16" stroke-width="4"><path d="M0 500 H1000 M0 640 H1000 M0 780 H1000"/><path d="M60 360 V920 M940 360 V920"/></g>
+<rect x="70" y="400" width="150" height="48" fill="#f59e0b"/><text x="145" y="432" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="20" font-weight="700" letter-spacing="3" fill="#121212" text-anchor="middle">NO ETA</text>
+<g transform="translate(130 -250) scale(1.25)"><g transform="translate(0 0) scale(1)">
+<path d="M250 250 L180 330 L130 560 L195 575 L250 430 L250 640 L550 640 L550 430 L605 575 L670 560 L620 330 L550 250 Z" fill="#b3261e"/>
+<path d="M300 250 Q400 130 500 250 Q470 312 400 322 Q330 312 300 250Z" fill="#b3261e"/>
+<path d="M330 256 Q400 176 470 256 Q440 296 400 302 Q360 296 330 256Z" fill="#5b0f0b"/>
+<path d="M300 505 H500 L522 600 H278 Z" fill="none" stroke="#7a1914" stroke-width="3"/>
+<path d="M300 505 L340 545 M500 505 L460 545" stroke="#7a1914" stroke-width="3"/>
+<path d="M378 300 V392 M422 300 V382" stroke="#f5f5f0" stroke-width="6" stroke-linecap="round"/>
+<rect x="352" y="392" width="12" height="22" fill="#f5f5f0"/><rect x="416" y="382" width="12" height="22" fill="#f5f5f0"/>
+<rect x="345" y="438" width="110" height="30" fill="#f5f5f0"/>
+<text x="400" y="460" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="16" font-weight="700" letter-spacing="3" fill="#121212" text-anchor="middle">NO ETA</text>
+<path d="M250 430 L195 575 M550 430 L605 575" stroke="#7a1914" stroke-width="2" opacity=".6"/>
+</g></g></g>
+<g stroke="#e5e5e1" stroke-opacity=".28" stroke-width="2"><path d="M10 0 l-18 60" /><path d="M107 211 l-18 60" /><path d="M204 422 l-18 60" /><path d="M301 633 l-18 60" /><path d="M398 844 l-18 60" /><path d="M495 1055 l-18 60" /><path d="M592 1266 l-18 60" /><path d="M689 1477 l-18 60" /><path d="M786 188 l-18 60" /><path d="M883 399 l-18 60" /><path d="M980 610 l-18 60" /><path d="M1077 821 l-18 60" /><path d="M1174 1032 l-18 60" /><path d="M71 1243 l-18 60" /><path d="M168 1454 l-18 60" /><path d="M265 165 l-18 60" /><path d="M362 376 l-18 60" /><path d="M459 587 l-18 60" /><path d="M556 798 l-18 60" /><path d="M653 1009 l-18 60" /><path d="M750 1220 l-18 60" /><path d="M847 1431 l-18 60" /><path d="M944 142 l-18 60" /><path d="M1041 353 l-18 60" /><path d="M1138 564 l-18 60" /><path d="M35 775 l-18 60" /><path d="M132 986 l-18 60" /><path d="M229 1197 l-18 60" /><path d="M326 1408 l-18 60" /><path d="M423 119 l-18 60" /><path d="M520 330 l-18 60" /><path d="M617 541 l-18 60" /><path d="M714 752 l-18 60" /><path d="M811 963 l-18 60" /><path d="M908 1174 l-18 60" /><path d="M1005 1385 l-18 60" /><path d="M1102 96 l-18 60" /><path d="M1199 307 l-18 60" /><path d="M96 518 l-18 60" /><path d="M193 729 l-18 60" /><path d="M290 940 l-18 60" /><path d="M387 1151 l-18 60" /><path d="M484 1362 l-18 60" /><path d="M581 73 l-18 60" /><path d="M678 284 l-18 60" /><path d="M775 495 l-18 60" /><path d="M872 706 l-18 60" /><path d="M969 917 l-18 60" /></g></svg>
