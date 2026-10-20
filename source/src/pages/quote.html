@@ -1,0 +1,47 @@
+Get a quote|quote|Build a starting estimate for a website, redesign, maintenance plan or ad campaign.
+<div class="wrap page-head"><h1>Get a quote</h1><p class="lead">Choose what you need and watch the price update as you go. Send the request and we will confirm it in writing after a short call.</p></div>
+<section class="section">
+  <div class="wrap">
+    <form class="form-grid" data-form="quote" novalidate autocomplete="on" style="gap:48px">
+<div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+      <div style="display:grid;gap:36px;min-width:0">
+        <fieldset><legend>What do you need?</legend>
+          <div class="opts">
+            <label class="opt"><input type="checkbox" name="service" value="web"><span>New website</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="remodel"><span>Website redesign</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="care"><span>Maintenance and updates</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="ads"><span>Ad campaigns</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="seo"><span>SEO and speed</span></label>
+            <label class="opt"><input type="checkbox" name="service" value="shop"><span>Online store</span></label>
+          </div>
+        </fieldset>
+        <fieldset><legend>About the project</legend>
+          <div class="field-row">
+            <div class="field"><label for="q-pages">Number of pages</label><input type="number" id="q-pages" name="pages" min="1" max="100" step="1" value="5" inputmode="numeric" required><small class="muted">Most small sites need 4 to 8: home, about, services, contact and more.</small></div>
+            <div class="field"><label for="q-timeline">Timeline</label><select id="q-timeline" name="timeline"><option value="standard">Standard (4 to 8 weeks)</option><option value="rush">Rush (under 4 weeks)</option><option value="flexible">Flexible</option></select></div>
+          </div>
+          <div class="field"><label for="q-budget">Budget</label><select id="q-budget" name="budget"><option>Not sure yet</option><option>Under $500</option><option>$500 to $1,000</option><option>$1,000 to $2,500</option><option>$2,500+</option></select></div>
+          <div class="field"><label for="q-details">Anything else we should know?</label><textarea id="q-details" name="details" placeholder="Your current website address, goals, deadlines or examples you like"></textarea></div>
+        </fieldset>
+        <fieldset><legend>Your details</legend>
+          <div class="field-row">
+            <div class="field"><label for="q-name">Your name</label><input type="text" id="q-name" name="name" autocomplete="name" required></div>
+            <div class="field"><label for="q-email">Email</label><input type="email" id="q-email" name="email" autocomplete="email" required></div>
+          </div>
+          <div class="field-row">
+            <div class="field"><label for="q-business">Business name</label><input type="text" id="q-business" name="business" autocomplete="organization"></div>
+            <div class="field"><label for="q-phone">Phone (optional)</label><input type="tel" id="q-phone" name="phone" autocomplete="tel"></div>
+          </div>
+        </fieldset>
+      </div>
+      <aside class="summary">
+        <h3>Your estimate</h3>
+        <div class="est"><span>One-time</span><b id="est-once">None</b></div>
+        <div class="est"><span>Monthly</span><b id="est-monthly">None</b></div>
+        <small>Page-based services use the number of pages you enter. We confirm your final price in writing after a short call. Ad spend is paid to the ad platform separately.</small>
+        <p class="err" role="alert"></p>
+        <button class="btn primary" type="submit">Request this quote</button>
+      </aside>
+    </form>
+  </div>
+</section>

@@ -1,0 +1,6 @@
+{
+  // Use this instead (rename to wrangler.jsonc) ONLY if you deploy as a Cloudflare Worker with static assets.
+  "name": "eastlinewebco",
+  "compatibility_date": "2026-10-18",
+  "assets": { "directory": "./public", "not_found_handling": "404-page" }
+}
