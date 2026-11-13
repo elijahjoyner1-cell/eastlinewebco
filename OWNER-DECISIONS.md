@@ -97,3 +97,5 @@ Update: Swift logo is now a clean emblem (gold crate on pallet with motion lines
 Update: Swift logo is back to the three-movers-with-crate concept, with redrawn, better-proportioned figures. Needs client approval.
 
 Update: the Swift logo is the client's original again; all redesign attempts were reverted.
+
+Update: Swift site now uses the new client-supplied logo (header, hero, footer, favicon, icons, share image).
