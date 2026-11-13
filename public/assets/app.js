@@ -360,7 +360,7 @@ var CONFIG = window.ELW_CONFIG || {};
   var fine = window.matchMedia("(hover:hover) and (pointer:fine)").matches && window.innerWidth >= 961;
 
   /* inertial scrolling (mouse and trackpad only; touch keeps native momentum) */
-  if (fine) {
+  if (false) { /* inertial scroll disabled: native scrolling feels more immediate */
     var target = window.pageYOffset, cur = target, raf = 0;
     doc.classList.add("smooth");
     var maxY = function () { return doc.scrollHeight - window.innerHeight; };
@@ -375,7 +375,7 @@ var CONFIG = window.ELW_CONFIG || {};
     };
     var step = function () {
       var d = target - cur;
-      cur = Math.abs(d) < 0.5 ? target : cur + d * 0.11;
+      cur = Math.abs(d) < 0.5 ? target : cur + d * 0.24;
       window.scrollTo({ top: cur, behavior: "instant" });
       raf = cur === target ? 0 : requestAnimationFrame(step);
     };
@@ -415,7 +415,7 @@ var CONFIG = window.ELW_CONFIG || {};
       t.classList.add("in"); inIo.unobserve(e.target);
       if (t.classList.contains("clip-pre")) setTimeout(function () { t.classList.add("done"); }, 2000);
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+  }, { threshold: 0.05, rootMargin: "0px 0px 8% 0px" });
   document.querySelectorAll(".sec-head > p,.why-intro > p,.cta-x > p").forEach(function (p, i) {
     if (!below(p)) return;
     p.classList.add("mrv"); p.style.setProperty("--d", (p.classList.contains("lead") ? 260 : 140) + "ms"); inIo.observe(p);

@@ -1,9 +1,10 @@
+import json
 import re, os, shutil, glob, sys, base64, hashlib
 sys.path.insert(0,'tools')
 import logo as L
 SRC='src'; FONTS='https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap'
 ARROW=''
-NAV=[('services','Services','services.html'),('work','Work','work.html'),('process','Process','process.html'),('about','About','about.html'),('contact','Contact','contact.html')]
+NAV=[('services','Services','services.html'),('work','Work','work.html'),('blog','Guides','blog.html'),('process','Process','process.html'),('about','About','about.html'),('contact','Contact','contact.html')]
 LOGO='<svg width="30" height="30" viewBox="0 0 28 28" aria-hidden="true"><path d="M2 20h24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/><path d="M7.5 20a6.5 6.5 0 0 1 13 0z" fill="var(--warm)"/></svg>'
 # Company social profiles. These are the defaults; the live links come from `social` in assets/config.js
 SOCIAL=[
@@ -22,9 +23,9 @@ def header(active):
 <button class="icon-btn" id="theme-btn" aria-label="Switch light or dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
 <a class="btn primary sm" href="quote.html">Get a quote</a></nav><div class="progress" id="progress" aria-hidden="true"></div></div></header>'''
 FOOTER=f'''<footer class="site-footer"><div class="wrap"><div class="foot">
-<div><a class="logo" href="index.html" aria-label="EastLineWebCo home">{L.header_svg()}</a><p class="muted" style="margin-top:14px;max-width:32ch">Websites, redesigns, maintenance and SEO for growing businesses.</p></div>
+<div><a class="logo" href="index.html" aria-label="EastLineWebCo home">{L.header_svg()}</a><p class="muted" style="margin-top:14px;max-width:32ch">Websites, redesigns, maintenance and SEO for growing businesses.</p><p class="muted" style="margin-top:10px;max-width:32ch">Based in Fredericksburg, VA. Serving businesses within 150 miles.</p></div>
 <div><h4>Services</h4><ul><li><a href="services.html#web">New websites</a></li><li><a href="services.html#remodel">Redesigns</a></li><li><a href="services.html#care">Maintenance</a></li><li><a href="services.html#pages">Additional pages</a></li><li><a href="services.html#seo">SEO and performance</a></li><li><a href="services.html#gbp">Google Business Profile</a></li></ul></div>
-<div><h4>Company</h4><ul><li><a href="work.html">Our work</a></li><li><a href="about.html">About</a></li><li><a href="process.html">Process</a></li><li><a href="policies.html">Project policies</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html">Get a quote</a></li></ul></div>
+<div><h4>Company</h4><ul><li><a href="work.html">Our work</a></li><li><a href="work-swift-white-glove-moving.html">Case studies</a></li><li><a href="blog.html">Guides</a></li><li><a href="web-design-fredericksburg-va.html">Web design in Fredericksburg</a></li><li><a href="about.html">About</a></li><li><a href="process.html">Process</a></li><li><a href="policies.html">Project policies</a></li><li><a href="contact.html">Contact</a></li><li><a href="quote.html">Get a quote</a></li></ul></div>
 <div><h4>Email</h4><ul><li><a data-email="support" href="mailto:support@eastlinewebco.com">support@eastlinewebco.com</a></li><li><a data-email="quotes" href="mailto:quotes@eastlinewebco.com">quotes@eastlinewebco.com</a></li></ul><h4 style="margin-top:22px">Follow us</h4>{social()}</div>
 </div><div class="legal"><span>&copy; <span data-year>2026</span> EastLineWebCo. All rights reserved.</span></div></div></footer>'''
 EARLY=r'''<script>(function(){var R=document.documentElement,RE=/(^|\|)elw:(light|dark)$/;function rd(){var t=null;try{t=localStorage.getItem("elw-theme")}catch(e){}if(!t){try{t=sessionStorage.getItem("elw-theme")}catch(e){}}if(!t){var m=RE.exec(window.name||"");t=m&&m[2]}return t==="light"||t==="dark"?t:null}window.elwTheme={get:rd,set:function(v){try{localStorage.setItem("elw-theme",v)}catch(e){}try{sessionStorage.setItem("elw-theme",v)}catch(e){}try{var b=(window.name||"").replace(RE,"");window.name=(b?b+"|":"")+"elw:"+v}catch(e){}}};var t=rd();if(t)R.setAttribute("data-theme",t)})();</script>'''
@@ -150,9 +151,12 @@ def load():
         raw=open(f).read(); first,body=raw.split('\n',1); t,nav,desc=first.split('|')
         pages[os.path.basename(f)]=(t,nav,desc,body)
     return pages
+SCHEMA='<script type="application/ld+json">'+json.dumps({'@context': 'https://schema.org', '@type': 'ProfessionalService', 'name': 'EastLineWebCo', 'url': 'https://eastlinewebco.com/', 'logo': 'https://eastlinewebco.com/assets/icon-512.png', 'image': 'https://eastlinewebco.com/assets/icon-512.png', 'description': 'Web design studio in Fredericksburg, VA building new websites, redesigns, maintenance, SEO and Google Business Profile setup for small businesses.', 'email': 'quotes@eastlinewebco.com', 'address': {'@type': 'PostalAddress', 'addressLocality': 'Fredericksburg', 'addressRegion': 'VA', 'addressCountry': 'US'}, 'geo': {'@type': 'GeoCoordinates', 'latitude': 38.3032, 'longitude': -77.4605}, 'areaServed': {'@type': 'GeoCircle', 'geoMidpoint': {'@type': 'GeoCoordinates', 'latitude': 38.3032, 'longitude': -77.4605}, 'geoRadius': 241402}, 'sameAs': ['https://www.instagram.com/eastlinewebco', 'https://www.tiktok.com/@eastline.web.co', 'https://www.facebook.com/profile.php?id=61596209691230'], 'hasOfferCatalog': {'@type': 'OfferCatalog', 'name': 'Web design services', 'itemListElement': [{'@type': 'Offer', 'name': 'New website page', 'price': '200', 'priceCurrency': 'USD', 'description': 'Starting price per page'}, {'@type': 'Offer', 'name': 'Redesign page', 'price': '150', 'priceCurrency': 'USD', 'description': 'Starting price per page'}, {'@type': 'Offer', 'name': 'SEO per page', 'price': '75', 'priceCurrency': 'USD', 'description': 'Starting price per page'}, {'@type': 'Offer', 'name': 'Google Business Profile setup', 'price': '149', 'priceCurrency': 'USD'}, {'@type': 'Offer', 'name': 'Essential maintenance plan', 'price': '49', 'priceCurrency': 'USD', 'description': 'Per month'}]}},separators=(',',':'))+'</script>'
+DOMAIN='https://eastlinewebco.com'
+TITLES={'index.html':'Affordable Web Design for Small Businesses | EastLineWebCo','services.html':'Web Design from $200/Page, Redesigns $150 | EastLineWebCo','work.html':'Web Design Portfolio and Case Studies | EastLineWebCo','process.html':'Our Web Design Process and FAQ | EastLineWebCo','about.html':'About EastLineWebCo | Fredericksburg, VA Web Design','contact.html':'Contact EastLineWebCo | Web Design in Fredericksburg, VA','quote.html':'Website Quote Builder | EastLineWebCo','work-swift-white-glove-moving.html':'Swift White Glove Moving Website Case Study | EastLineWebCo','work-no-eta-streetwear-brand.html':'NO ETA Streetwear Website Case Study | EastLineWebCo','web-design-fredericksburg-va.html':'Web Design in Fredericksburg, VA | EastLineWebCo','blog.html':'Web Design and Local SEO Guides | EastLineWebCo'}
 def doc(name,t,nav,desc,body,inline,artifact_index):
     body=body.replace('<!--SOCIAL-->',social('social'))
-    title='EastLineWebCo' if nav=='home' else f'{t} | EastLineWebCo'
+    title=TITLES.get(name) or (f'{t} | EastLineWebCo')
     css=open(f'{SRC}/assets/styles.css').read(); js=open(f'{SRC}/assets/config.js').read()+'\n'+open(f'{SRC}/assets/app.js').read()
     ARTIFACT_CFG=1
     V=hashlib.md5((css+js+open(f'{SRC}/assets/config.js').read()).encode()).hexdigest()[:8]
@@ -164,6 +168,16 @@ def doc(name,t,nav,desc,body,inline,artifact_index):
     tc='<meta name="theme-color" content="#0A1020" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#F5F7FC" media="(prefers-color-scheme: light)"><meta name="format-detection" content="telephone=no">'
     meta=tc+f'<meta name="description" content="{desc}"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,{fav}">'
     if not inline:
+        meta+=f'<link rel="canonical" href="{DOMAIN}/'+('' if name=='index.html' else name)+'">'
+        if name=='index.html': meta+=SCHEMA
+        url=f'{DOMAIN}/'+('' if name=='index.html' else name); isart=name.startswith('blog-')
+        d2=desc.replace('"','&quot;')
+        meta+=f'<meta property="og:site_name" content="EastLineWebCo"><meta property="og:type" content="{"article" if isart else "website"}"><meta property="og:title" content="{title}"><meta property="og:description" content="{d2}"><meta property="og:url" content="{url}"><meta property="og:image" content="{DOMAIN}/assets/og.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{title}"><meta name="twitter:description" content="{d2}"><meta name="twitter:image" content="{DOMAIN}/assets/og.png">'
+        if isart: meta+='<script type="application/ld+json">'+json.dumps({"@context":"https://schema.org","@type":"Article","headline":t,"description":desc,"datePublished":"2026-11-13","dateModified":"2026-11-13","author":{"@type":"Organization","name":"EastLineWebCo","url":DOMAIN+'/'},"publisher":{"@type":"Organization","name":"EastLineWebCo","logo":{"@type":"ImageObject","url":DOMAIN+'/assets/icon-512.png'}},"mainEntityOfPage":url},separators=(',',':'))+'</script>'
+        if name=='process.html':
+            qa=re.findall(r'<details><summary>(.*?)</summary><p>(.*?)</p>',body,re.S)
+            strip=lambda x: re.sub(r'\s+',' ',re.sub(r'<[^>]+>','',x)).replace('&rsquo;',"'").replace('&amp;','&').strip()
+            if qa: meta+='<script type="application/ld+json">'+json.dumps({"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":strip(q),"acceptedAnswer":{"@type":"Answer","text":strip(a)}} for q,a in qa]},separators=(',',':'))+'</script>'
         meta+='<link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><link rel="manifest" href="manifest.webmanifest">'
     body=body.replace('{{SERVICES_ACC}}',acc_html()).replace('{{SERVICE_ARTICLES}}',svc_html()).replace('{{ABOUT_MARK}}',about_mark()).replace('{{WORK_CARDS}}',work_cards()).replace('{{SHOWCASE}}',showcase()).replace('{{HERO_BG}}',hero_bg())
     main=f'<main>{body}</main>'
@@ -176,10 +190,11 @@ for out,inline in (('dist/site',False),('dist/artifact',True)):
     for n,(t,nav,desc,body) in pages.items():
         open(f'{out}/{n}','w').write(doc(n,t,nav,desc,body,inline,inline and n=='index.html'))
     if not inline:
-        for a in ('styles.css','app.js','config.js','favicon.svg','apple-touch-icon.png','icon-192.png','icon-512.png'): shutil.copy(f'{SRC}/assets/{a}',f'{out}/assets/{a}')
+        for a in ('og.png','styles.css','app.js','config.js','favicon.svg','apple-touch-icon.png','icon-192.png','icon-512.png'): shutil.copy(f'{SRC}/assets/{a}',f'{out}/assets/{a}')
         shutil.copytree('dist/logo',f'{out}/assets/logo',dirs_exist_ok=True)
         open(f'{out}/manifest.webmanifest','w').write('{"name":"EastLineWebCo","short_name":"EastLineWebCo","start_url":"/index.html","display":"browser","background_color":"#0A1020","theme_color":"#0A1020","icons":[{"src":"assets/icon-192.png","sizes":"192x192","type":"image/png"},{"src":"assets/icon-512.png","sizes":"512x512","type":"image/png"}]}')
-        open(f'{out}/robots.txt','w').write('User-agent: *\nAllow: /\n')
+        open(f'{out}/robots.txt','w').write('User-agent: *\nAllow: /\nDisallow: /samples/\n\nSitemap: '+DOMAIN+'/sitemap.xml\n')
+        open(f'{out}/sitemap.xml','w').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join(f'<url><loc>{DOMAIN}/'+('' if n=="index.html" else n)+'</loc></url>' for n in pages if n!='404.html')+'</urlset>')
 for out in ('dist/site','dist/artifact'):
     shutil.copytree(f'{SRC}/samples',f'{out}/samples',dirs_exist_ok=True)
 print('built')

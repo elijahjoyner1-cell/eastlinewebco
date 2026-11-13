@@ -42,3 +42,13 @@ The site now describes what each service includes, excludes and needs from the c
 - The "Visitors this month" card in the hero is a labelled illustration, not real data. Remove it if you prefer.
 - No testimonials, client names, statistics or awards were added. All figures shown come from your published prices and timelines.
 - The marquee, rail arrows and scroll timeline are lightweight CSS/JS. No new libraries were added.
+
+## Case studies and local SEO
+- Added two client case studies (Swift White Glove Moving, NO ETA), labeled pre-launch. Placeholders marked [CONFIRM] need your input; no results or testimonials are invented.
+- Homepage now has ProfessionalService JSON-LD (Fredericksburg, 150-mile service area). Check the email and add a phone number if you want one in the schema.
+- Added canonical tags, sitemap.xml and robots.txt. Canonical assumes https://eastlinewebco.com. /samples/ is disallowed in robots.txt so client site copies are not indexed.
+
+## Guides, Fredericksburg page and technical SEO
+- New Guides section (blog.html plus five guides) and web-design-fredericksburg-va.html. Guides are about 320-450 words; expand them over time with your own real examples.
+- New page titles with keywords, Open Graph and Twitter tags (assets/og.png), Article schema on guides, and FAQPage schema on the Process page (built from its visible questions).
+- Guides use general advice and your published prices only; no statistics or client results are claimed.
