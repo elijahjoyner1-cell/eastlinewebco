@@ -9,6 +9,31 @@
   function $$(s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
 
+  /* ---- light / dark theme ---- */
+  (function () {
+    var btn = $("#theme-btn");
+    var meta = $('meta[name="theme-color"]');
+    function current() { return root.getAttribute("data-theme") === "light" ? "light" : "dark"; }
+    function paint() {
+      var t = current();
+      if (btn) { btn.setAttribute("aria-pressed", t === "light" ? "true" : "false"); btn.setAttribute("aria-label", t === "light" ? "Switch to dark mode" : "Switch to light mode"); }
+      if (meta) meta.setAttribute("content", t === "light" ? "#f6f4f0" : "#060606");
+    }
+    function set(t, save) {
+      if (!reduce) { root.classList.add("theme-anim"); setTimeout(function () { root.classList.remove("theme-anim"); }, 450); }
+      root.setAttribute("data-theme", t);
+      if (save) { try { localStorage.setItem("swift-theme", t); } catch (e) {} }
+      paint();
+    }
+    if (btn) btn.addEventListener("click", function () { set(current() === "light" ? "dark" : "light", true); });
+    if (window.matchMedia) {
+      var mq = window.matchMedia("(prefers-color-scheme: light)");
+      var onChange = function (e) { var saved = null; try { saved = localStorage.getItem("swift-theme"); } catch (x) {} if (!saved && !isStatic) set(e.matches ? "light" : "dark", false); };
+      if (mq.addEventListener) mq.addEventListener("change", onChange);
+    }
+    paint();
+  })();
+
   /* ---- small fills from config ---- */
   $$("[data-email]").forEach(function (el) {
     el.textContent = CFG.email || "";
@@ -156,7 +181,7 @@
 
       var title = kind === "availability" ? "Service area check" : "Quote request";
       var lines = [title + " for Swift White Glove Moving", ""];
-      [["Name", "full_name"], ["Email", "email"], ["Phone", "phone"], ["Service", "service"], ["Pickup", "pickup_location"], ["Delivery", "delivery_location"], ["Timeline", "timeline"]].forEach(function (p) {
+      [["Name", "full_name"], ["Email", "email"], ["Phone", "phone"], ["Service", "service"], ["Pickup", "pickup_location"], ["Delivery", "delivery_location"], ["Item type", "item_type"], ["Pieces", "piece_count"], ["Timeline", "timeline"]].forEach(function (p) {
         if (data[p[1]]) lines.push(p[0] + ": " + data[p[1]]);
       });
       if (data.message) lines.push("", data.message);

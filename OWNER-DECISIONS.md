@@ -45,10 +45,55 @@ The site now describes what each service includes, excludes and needs from the c
 
 ## Case studies and local SEO
 - Added two client case studies (Swift White Glove Moving, NO ETA), labeled pre-launch. Placeholders marked [CONFIRM] need your input; no results or testimonials are invented.
-- Homepage now has ProfessionalService JSON-LD (Fredericksburg, 150-mile service area). Check the email and add a phone number if you want one in the schema.
+- Homepage now has ProfessionalService JSON-LD (Fredericksburg base, serving the United States). Check the email and add a phone number if you want one in the schema.
 - Added canonical tags, sitemap.xml and robots.txt. Canonical assumes https://eastlinewebco.com. /samples/ is disallowed in robots.txt so client site copies are not indexed.
 
 ## Guides, Fredericksburg page and technical SEO
 - New Guides section (blog.html plus five guides) and web-design-fredericksburg-va.html. Guides are about 320-450 words; expand them over time with your own real examples.
 - New page titles with keywords, Open Graph and Twitter tags (assets/og.png), Article schema on guides, and FAQPage schema on the Process page (built from its visible questions).
 - Guides use general advice and your published prices only; no statistics or client results are claimed.
+
+## Concept case studies
+- Five concept pages (Harbor & Pine, Voltline, Lumen Dental, Northwind, Fern & Thread) are labeled as fictional concept projects with no client claims. They are linked from the Works page.
+
+## About page redesign and nationwide service area
+- About page rewritten in Elijah's voice using only the story provided. No invented history, credentials, client counts or results.
+- The 150-mile wording was removed everywhere, including footer, homepage, contact, guides, case studies and structured data (now: Fredericksburg base, areaServed United States). Update your Google Business Profile service area to match.
+- Founder photo: the mirror selfie was not used (phone covers the face, full-body framing, hallway background). No placeholder is shown; add a photo later.
+- Maintenance pricing: kept $49 / $99 / $179 per the earlier decision. Your latest brief listed Priority at $139, so the About page only says "from $49 a month".
+- "Online stores" is on the About page but not on the Services page yet.
+
+## Nationwide cleanup (second pass)
+- Removed the Fredericksburg landing page and its footer link, and "local" wording from the homepage, About, Contact, Guides and case studies. Fredericksburg remains as the "based in" location only.
+- "Local SEO Basics" guide became "SEO Basics for Small Business Websites" (URL is now blog-seo-basics.html). Titles and tags updated.
+- The Google Business Profile guide still describes a Google product that is local by nature.
+
+## Swift White Glove Moving update (freight focus)
+- Homepage now leads with white glove freight and delivery, adds a process section, replaces the soft stat tiles with factual ones, and adds item type and piece count to the quote form.
+- Retailer names were left exactly as the client supplied them.
+- No licensing, insurance, equipment or lane claims were added. Add them once the client confirms.
+- Phone number hooks are in the header and contact page; they appear automatically once a phone number is set in assets/js/config.js.
+
+## Swift site design pass (light and dark mode)
+- The brief named "Swift Transportation", a separate real company. It was applied to the client's Swift White Glove Moving site instead; nothing from the real Swift Transportation was used.
+- Light and dark mode with a toggle in the navigation on every page, remembered between visits, defaulting to the visitor's device setting. The embedded preview on the Works page always starts in dark.
+- The logo is unchanged. The header, hero, quote band and footer stay black in both modes so the white logo is never altered.
+- Corners are squarer for a more corporate look, plus new "Who We Serve" and "Care & Reliability" sections built only from the client's existing text.
+- Not added because no information or photos exist: fleet photography, technology, careers, certifications, statistics.
+
+## Swift route graphic, icons and logo concept
+- Added an animated gold route-line graphic to the Swift hero and line icons to the "Who We Serve" and "Care & Reliability" sections. Motion is off for reduced-motion users and in the Works preview.
+- A redesigned Swift logo concept was made as separate files (swift-logo-concepts.zip). It is used on the site as of the latest build. The original logo, which the client made, stays until the client approves a change.
+
+
+## Swift logo update
+The Swift site and the Works-page preview now use the redesigned logo: the original's realistic movers (cleaned from the client's artwork), a gold freight crate on a pallet, outlined SWIFT wordmark, WHITE GLOVE MOVING, and gold FREIGHT & DELIVERY. The original logo was client-made, so get client approval before launch. Original files are in git history.
+
+
+Update: the Swift logo was reverted to the first concept (simple figures, gold crate, outlined wordmark). The realistic-movers attempt was dropped. Get client approval before launch.
+
+Update: Swift logo is now a clean emblem (gold crate on pallet with motion lines) with a refined wordmark; the people figures were removed. Needs client approval before launch.
+
+Update: Swift logo is back to the three-movers-with-crate concept, with redrawn, better-proportioned figures. Needs client approval.
+
+Update: the Swift logo is the client's original again; all redesign attempts were reverted.
