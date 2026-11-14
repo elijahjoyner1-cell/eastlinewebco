@@ -7,7 +7,8 @@ window.ELW_CONFIG = {
   social: {
     instagram: "https://www.instagram.com/eastlinewebco",
     tiktok: "https://www.tiktok.com/@eastline.web.co",
-    facebook: "https://www.facebook.com/profile.php?id=61596209691230"
+    facebook: "https://www.facebook.com/profile.php?id=61596209691230",
+    linkedin: "https://www.linkedin.com/in/eastlinewebco/"
   },
   // Paste a form endpoint (Formspree, Getform, Netlify function, etc.) to receive quote
   // requests directly. Leave empty to let visitors copy or email their request instead.
